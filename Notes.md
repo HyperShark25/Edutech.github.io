@@ -1,0 +1,1 @@
+Maybe we should add the logo to be next or beside the heading element above the hero image
