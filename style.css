@@ -4,6 +4,7 @@
     font-size: 16px;
     font-family: sans-serif, "Vedana";
 
+    --border-shadow: 2px 2px 4px black;
 }
 
 body {
@@ -11,101 +12,357 @@ body {
     padding: 0;
 }
 
-@media screen and (max-width: 376px) {
-    nav {
-        border: 1px solid black;
-        width: auto;
-        height: 10px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        background-color: black;
-        padding: 5px;
-        gap: 20px;
-        text-transform: none;
-    }
 
-    .menu {
-        width: auto;
+@keyframes expand {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    } 
+    to {
+        opacity: 100%;
+        visibility: visible;
+        transform: scale(1.1);
+        padding: 20px;
+    }
+}
+
+nav {
+    border: 1px solid black;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    padding: 5px;
+    gap: 20px;
+} 
+
+.hamburger_label, .toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.image {
+    width: 50px;
+    padding-left: 20px;
+}
+h1 {
+    text-align: center;
+    text-shadow: 1px 1px 2px black;
+    font-style: italic;
+    font-size: 2.1rem;
+}
+
+
+.hero_background {
+    border-bottom: 10px solid rgba(120, 89, 10, 0.062);
+}
+
+@media screen and (max-width: 376px) { 
+    
+    .hamburger_label {
+        display: flex;
     }
 
     .links {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    input.toggle:checked ~ .links {
         display: flex;
-        gap: 15px;
+        flex-direction: column;
+        animation: expand 1s forwards;
     }
 
-    .links * {
-        color: white;
+    .hero {
+        border-bottom: 1px rgb;
     }
 
-    .logo {
-        width: 30px;
-    }
-    
-    .image {
-        width: 20px;
-    }
-    
     h1 {
-        text-align: center;
         font-size: 2rem;
-        text-shadow: 1px 1px 2px black;
-        font-style: italic;
     }
 
-
-    .hero_background {
+    .blue_background {
         background-color: rgb(0, 136, 255);
-        width: 100%;
+        width: auto;
         height: 250px;
+    }
+
+    .hero_background-img {
+        width: auto;
+        height: 100%;
+        opacity: 70%;
+        background-image: url("images/coding.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
 
     .title {
         position: absolute;
         left: 10%;
-        top: 30%;
-        font-size: 1.2rem;
+        margin-top: 110px;
+        font-size: 1.8rem;
+        font-weight: 800;
         color: rgb(255, 255, 255);
         text-shadow: 2px 2px 4px black;
         font-style: italic;
+        opacity: 70%;
         z-index: 1;
-        opacity: 60%;
     }
 
     .coding {
         position: relative;
         width: 100%;
+        height: auto;
         opacity: 60%;
     }
 
     .subtext {
-        font-size: 1rem;
         padding: 20px;
         font-style: italic;
     }
 
-    hr {
-        margin-top: 150px;
+    .button {
+        text-align: center;
+        width: 100%;
+        height: auto;
     }
 
+    .apply {
+        width: 250px;
+        height: 80px;
+        border-radius: 20px;
+        border: 1px solid black;
+        font-weight: bold;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 1.1rem;
+        justify-content: center;
+        box-shadow: var(--border-shadow);
+        transition: 250ms;
+        margin-bottom: 50px;
+    }
+
+    .apply:active {
+        box-shadow: none;
+        transform: scale(0.9);
+    }
+    
     .courses {
         width: auto;
         height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        align-items: center;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        row-gap: 50px;
+        justify-content: center;
         margin: 50px 0;
     }
     
     .course {
-        border: 1px solid black;
-        width: 200px;
-        height: 250px;
+        width: 280px;
+        height: 120px;
         border-radius: 12px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: transparent;
+        box-shadow: var(--border-shadow);
+        transition: 250ms;
+        cursor: pointer;
     }
 
+    .course:active {
+        box-shadow: none;
+        transform: scale(0.9);
+    }
 
+    .course_name {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 10px;
+    }
+
+    .price {
+        height: auto;
+        text-align: right;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+@media screen and (min-width: 1420px) {
+    .toggle {
+        display: none;
+    }
+    
+    .links {
+        justify-content: space-evenly;
+        width: 580%;
+    }
+    
+    h1 {
+        text-align: center;
+        text-shadow: 1px 1px 2px black;
+        font-style: italic;
+        font-size: 2.1rem;
+    }
+
+    
+    .blue_background {
+        width: 100%;
+        background-color: rgb(0, 136, 255);
+    }
+
+    .hero_background-img {
+        width: auto;
+        height: 1024px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 70%;
+        border: 1px solid black;
+        background-image: url("images/coding.jpg");
+    }
+    
+    .title {
+        position: absolute;
+        z-index: 1;
+        left: 15%;
+        top: 60%;
+        font-size: 5rem;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 2px 4px black;
+        font-style: italic;
+        font-weight: 1000;
+        opacity: 80%;
+    }
+
+    .coding {
+        position: relative;
+        width: 100%;
+        height: auto;
+        opacity: 60%;
+    }
+
+    .subtext {
+        padding: 50px;
+        font-style: italic;
+        font-size: 2rem;
+        word-spacing: 5px;
+        line-height: 50px;
+        font-weight: 600;
+    }
+
+    .button {
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.1);
+    }
+
+    .button {
+        margin-bottom: 100px;
+    }
+
+    .apply {
+        width: 340px;
+        height: 120px;
+        border-radius: 20px;
+        border: 1px solid black;
+        font-weight: bold;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 1.6rem;
+        justify-content: center;
+        box-shadow: var(--border-shadow);
+        transition: 250ms;
+    }
+
+    .apply:active {
+        box-shadow: none;
+        transform: scale(0.9);
+    }
+    
+    .courses {
+        width: auto;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+        padding-left: 200px;
+        margin: 100px 0;
+    }
+    
+    .course {
+        width: 65%;
+        height: 150px;
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: transparent;
+        box-shadow: var(--border-shadow);
+        transition: 250ms;
+        cursor: pointer;
+    }
+
+    .course:active {
+        box-shadow: none;
+        transform: scale(0.9);
+    }
+
+    .course_name {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 10px;
+    }
+
+    .price {
+        height: auto;
+        text-align: right;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
 }

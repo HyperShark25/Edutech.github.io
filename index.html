@@ -18,51 +18,93 @@
     <header>
         <nav>
             <div class="menu">
-                <i class="fa-solid fa-bars" style="color: white;"></i>
+                
+                <label for="toggle_menu" class="hamburger_label">
+                    <i class="fa-solid fa-bars" style="color: white;"></i>
+                </label>
+                <input type="checkbox" id="toggle_menu" class="toggle" name="toggle"/>
+                
+                <div class="links" id="links">
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                    <a href="#courses">Courses</a>
+                </div>
             </div>
 
-            <div class="links">
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            </div>
-            <div class="logo">
-                <img src="images/e-learning.png" alt="Logo" class="image">
-            </div>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <h1>EduTech Solutions</h1>
+            <div>
+                <h1>EduTech Solutions <img src="images/e-learning.png" alt="Logo" class="image"></h1>
+            </div>
+
             <div class="hero_background">
-                <div class="title">
-                    <h2>Upskill Your Knowledge</h2>
-                </div>
-                <div>
-                    <img src="images/coding.jpg" alt="Coding" class="coding">
-                </div>
-
-                <div class="subtext">
-                    <span>
-                        EduTech Solutions Aims to provide the utmost
-                        performance in educational requirements in terms
-                        of Knowledge, experience as well as experience in
-                        order enhance the learner's job position target
-                        as well as keeping them updated with everyday technology.
-                    </span>
-                </div>
-            </div>
-            <hr>
-
-            <div class="courses">
                 
-                <div class="course"></div>
-                <div class="course"></div>
+                <div class="blue_background">
+                    <div class="hero_background-img">
+                        <span class="title">Upskill Your Knowledge</span>
+                    </div>
+                </div>
 
-                <div class="course"></div>
-                <div class="course"></div>
+                <p class="subtext">
+                    EduTech Solutions Aims to provide the utmost
+                    performance in educational requirements in terms
+                    of Knowledge, experience as well as experience in
+                    order enhance the learner's job position target
+                    as well as keeping them updated with everyday technology.
+                </p>
+
+                <div class="button">
+                    <button type="submit" class="apply">Apply for a course</button>
+                </div>
 
             </div>
+        </section>
+
+        
+        <section class="courses" id="courses">
+                <button class="course">
+                    <p class="course_name">Frontend Development</p>
+                    <div class="icons">
+                        <i class="fa-brands fa-html5"></i>
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <i class="fa-brands fa-js"></i>
+                        <i class="fa-brands fa-bootstrap"></i>
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <span class="price">$$$</span>
+                </button>
+
+                <button class="course">
+                    <p class="course_name">Backend Development</p>
+                    <div class="icons backend">
+                        <i class="fa-brands fa-php"></i>
+                        <i class="fa-brands fa-laravel"></i>
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <span class="price">$$$</span>
+                </button>
+
+                <button class="course">
+                    <p class="course_name">Introduction To Python</p>
+                    <div class="icons">
+                        <i class="fa-brands fa-python"></i>
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <span class="price">$$$</span>
+                </button>
+
+                <button class="course">
+                    <p class="course_name">Integrating Nodejs With React</p>
+                    <div class="icons">
+                        <i class="fa-brands fa-node"></i>
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <span class="price">$$$</span>
+                </button>
+
         </section>
     </main>
 </body>
